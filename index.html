@@ -16,25 +16,52 @@
         .max-h-card {
             max-height: 10em;
         }
+
+        circle {
+            fill: orange;
+        }
     </style>
   </head>
   <body>
-    <div class="card-group">
-        <div class="card max-h-card">
-            <form>
-                <div class="form-group">
-                    <label for="text1">Example textarea</label>
-                    <textarea class="form-control" id="text1" rows="3"></textarea>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card-group">
+                    <div class="card max-h-card">
+                        <form>
+                            <div class="form-group">
+                                <label for="text1">Example textarea</label>
+                                <textarea class="form-control" id="text1" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="text1card" class="card max-h-card">
+                        <div class="card-block">
+                            <div class="card-title">Stupid log</div>
+                            <div id="text1log" class="max-h-log"></div>
+                        </div>
+                    </div>
                 </div>
-                </form>
+            </div>
         </div>
-        <div id="text1card" class="card max-h-card">
-            <div class="card-block">
-                <div class="card-title">Stupid log</div>
-                <div id="text1log" class="max-h-log"/>
+
+        <div class="row">
+            <div class="col">
+                <table id="ftable" class="table">
+                    <thead>
+                        <tr>
+                            <td>Type</td>
+                            <td>Key(s)</td>
+                            <td>Value</td>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>
+    <svg width="960" height="500">
+        <g id="wrapper" transform="translate(40, 40)">
+    </svg>
 
     <script id="template" type="x-tmpl-mustache">
         {{#logs}}
@@ -47,6 +74,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src=" https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <script data-main="scripts/keystroke" src="scripts/require.js"></script>
   </body>
 </html>
